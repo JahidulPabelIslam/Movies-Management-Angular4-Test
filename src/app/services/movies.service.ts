@@ -17,7 +17,7 @@ export class MoviesService {
      this.nextId = 3;
   }
 
-    public addMovie(name: string, genre: string, year: number): void {
+    public addMovie(name: String, genre: String, year: number): void {
         const movie = new Movie(this.nextId, name, genre, year);
         this.movies.push(movie);
         this.nextId++;
@@ -29,6 +29,10 @@ export class MoviesService {
 
     public removeMovie(id: number): void {
         this.movies = this.movies.filter((movie) => movie.id !== id);
+    }
+
+    public getMovie(id: number): Movie {
+        return this.getMovies().find(hero => hero.id === id);
     }
 
 }
