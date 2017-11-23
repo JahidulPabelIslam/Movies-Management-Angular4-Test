@@ -1,4 +1,4 @@
-<h2>Add/Edit Movie</h2>
+<h2>{{movieId ? 'Update' : 'Add'}} Movie</h2>
 
 <label for="movie-name">Movie Name</label>
 <input type="text" [(ngModel)]="movieName" value={{movieName}} id="movie-name"/>
@@ -10,4 +10,4 @@
 <input type="number" [(ngModel)]="movieYear" value={{movieYear}} id="movie-year"/>
 
 
-<button (click)="addMovie()">Add</button>
+<button (click)="addMovie()">{{movieId ? 'Update' : 'Add'}}</button>
