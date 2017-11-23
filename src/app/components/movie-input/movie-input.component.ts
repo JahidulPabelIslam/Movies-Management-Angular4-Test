@@ -33,9 +33,13 @@ export class MovieInputComponent implements OnInit {
       });
   }
 
-    private addMovie(): void {
-        this.moviesService.addMovie(this.movieName, this.movieGenre, this.movieYear);
-        this.router.navigateByUrl('/movies');
+    private sendMovie(): void {
+      if (this.movieId === undefined) {
+          this.moviesService.addMovie(this.movieName, this.movieGenre, this.movieYear);
+      } else {
+          this.moviesService.updateMovie(this.movieId, this.movieName, this.movieGenre, this.movieYear);
+      }
+      this.router.navigateByUrl('/movies');
     }
 
 }

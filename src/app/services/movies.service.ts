@@ -23,6 +23,12 @@ export class MoviesService {
         this.nextId++;
     }
 
+    public updateMovie(id: number, name: String, genre: String, year: number): void {
+        const movie = new Movie(id, name, genre, year);
+        const foundIndex = this.movies.findIndex(x => x.id === id);
+        this.movies[foundIndex] = movie;
+    }
+
     public getMovies(): Movie[] {
         return this.movies;
     }
