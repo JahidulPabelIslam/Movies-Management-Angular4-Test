@@ -1,13 +1,6 @@
-<p>
-    movies works!
-</p>
-
-<h1>{{title}}</h1>
-
-
-<h2>Movies</h2>
+<h2>All Movies</h2>
 <ul>
-  <li *ngFor="let movie of movies">
-    {{movie.model}}
-  </li>
+    <li *ngFor="let movie of moviesService.getMovies()">
+        {{movie.name}} <a routerLink="/movie/{{movie.id}}">User</a>
+    </li>
 </ul>
