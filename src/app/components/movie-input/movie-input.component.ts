@@ -1,7 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
+
 import { MoviesService } from '../../services/movies.service';
+
+import { Movie } from '../../models/movie';
 
 @Component({
   selector: 'app-movie-input',
@@ -10,36 +14,38 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class MovieInputComponent implements OnInit {
 
-  @Input() movieId: number;
-  @Input() movieName: String;
-  @Input() movieGenre: String;
-  @Input() movieYear: number;
+  @Input() movie: Movie;
 
-  constructor(private moviesService: MoviesService, private route: ActivatedRoute, private router: Router) {
-      this.movieName = '';
-      this.movieGenre = '';
-      this.movieYear = 0;
-  }
+  constructor(private moviesService: MoviesService, private route: ActivatedRoute, private router: Router, private location: Location) {}
 
   ngOnInit() {
       this.route.params.forEach((params: Params) => {
           if (params['id'] !== undefined) {
-              this.movieId = parseInt(params['id'], 10);
-              const movie = this.moviesService.getMovie(this.movieId);
-              this.movieName = movie.name;
-              this.movieGenre = movie.genre;
-              this.movieYear = movie.year;
+              const id = parseInt(params['id'], 10);
+              const movie = this.moviesService.getMovie(id);
+              if (movie === undefined) {
+                  this.router.navigateByUrl('/404');
+              } else {
+                  this.movie = movie;
+              }
           }
       });
+      if (this.movie === undefined) {
+          this.movie = new Movie();
+      }
   }
 
     private sendMovie(): void {
-      if (this.movieId === undefined) {
-          this.moviesService.addMovie(this.movieName, this.movieGenre, this.movieYear);
+      if (this.movie.id === undefined) {
+          this.moviesService.addMovie(this.movie);
       } else {
-          this.moviesService.updateMovie(this.movieId, this.movieName, this.movieGenre, this.movieYear);
+          this.moviesService.updateMovie(this.movie);
       }
       this.router.navigateByUrl('/movies');
+    }
+
+    private back(): void {
+        this.location.back();
     }
 
 }

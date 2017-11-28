@@ -1,0 +1,16 @@
+<div *ngIf="movie && movie.id">
+	<p><strong>Movie Name</strong></p>
+	<p>{{movie.name}}</p>
+
+	<p><strong>Movie Genre</strong></p>
+	<p>{{movie.genre}}</p>
+
+	<p><strong>Movie Year</strong></p>
+	<p>{{movie.year}}</p>
+
+	<a  class="delete" (click)="deleteMovie()">Delete</a>
+	<a *ngIf="movie.id" routerLink="/movie/{{movie.id}}/edit">Edit</a>
+
+	<a class="back" (click)="back()">Back</a>
+	<a routerLink="/movies/">All Movies</a>
+</div>

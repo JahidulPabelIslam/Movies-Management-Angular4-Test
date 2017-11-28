@@ -1,13 +1,16 @@
-<h2>{{movieId ? 'Update' : 'Add'}} Movie</h2>
+<h2>{{movie.id !== undefined ? 'Update' : 'Add'}} Movie</h2>
 
 <label for="movie-name">Movie Name</label>
-<input type="text" [(ngModel)]="movieName" value={{movieName}} id="movie-name"/>
+<input type="text" [(ngModel)]="movie.name" value={{movie.name}} id="movie-name"/>
 
 <label for="movie-genre">Movie Genre</label>
-<input type="text" [(ngModel)]="movieGenre" value={{movieGenre}} id="movie-genre"/>
+<input type="text" [(ngModel)]="movie.genre" value={{movie.genre}} id="movie-genre"/>
 
 <label for="movie-year">Movie Year</label>
-<input type="number" [(ngModel)]="movieYear" value={{movieYear}} id="movie-year"/>
+<input type="number" [(ngModel)]="movie.year" value={{movie.year}} id="movie-year"/>
 
 
-<button (click)="sendMovie()">{{movieId ? 'Update' : 'Add'}}</button>
+<button class="add" (click)="sendMovie()">{{movie.id !== undefined ? 'Update' : 'Add'}}</button>
+
+<a class="back" (click)="back()">Back</a>
+<a routerLink="/movies/">All Movies</a>

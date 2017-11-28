@@ -10,20 +10,25 @@ import { MovieInputComponent } from './components/movie-input/movie-input.compon
 
 
 import { MoviesService } from './services/movies.service';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const appRoutes: Routes = [
     { path: 'movie/:id/edit', component: MovieInputComponent },
+    { path: 'movie/:id/view', component: MovieDetailComponent },
     { path: 'movie/add', component: MovieInputComponent },
     { path: 'movies', component: MoviesComponent },
     { path: '', redirectTo: '/movies', pathMatch: 'full' },
-    { path: '**', component: MoviesComponent }
+    { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
-    MovieInputComponent
+    MovieInputComponent,
+    MovieDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

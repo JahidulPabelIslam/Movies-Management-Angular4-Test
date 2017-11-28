@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+	box-sizing: inherit;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+.main-content {
+	text-align: center;
+	margin: auto;
+	max-width: 800px;
+	border: 5px solid red;
+	padding: 20px;
+	width: 100%;
+}
+
+a, a:active, a:visited, button {
+	padding: 8px;
+	display: inline-block;
+	background: blue;
+	color: white;
+	text-decoration: none;
+	cursor: hand;
+	border: none;
+	outline: none;
+	margin: 5px;
+}
+
+a:hover, button:hover {
+	opacity: .8;
+}
+
+.add, .add:active, .add:visited{
+	background: green;
+}
+
+.back, .back:active, .back:visited{
+	background: yellowgreen;
+}
