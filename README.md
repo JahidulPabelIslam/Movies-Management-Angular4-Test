@@ -1,4 +1,11 @@
-# MoviesManagementAngular4Test
+# Movies Management
+
+This app was made to give a quick test to have a play around with AngularIO 5 and see how it is.
+
+Ths app is to manage a list of movies.
+
+
+# Instructions 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.2.
 
