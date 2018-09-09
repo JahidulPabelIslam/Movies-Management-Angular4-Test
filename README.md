@@ -1,6 +1,6 @@
 # Movies Management
 
-This app was made to give a quick test to have a play around with AngularIO 5 and see how it is.
+This app was made to get to have a play around with and test AngularIO 5 and see how it is.
 
 Ths app is to manage a list of movies.
 
