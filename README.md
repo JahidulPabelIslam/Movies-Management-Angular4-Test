@@ -1,21 +1,14 @@
 # Movies Management
 
-This app was made to get to have a play around with and test AngularIO 5 and see how it is.
+A management web tool for managing a list of movies and information about the movies.
 
-Ths app is to manage a list of movies.
+This tool was made to get to have a play around with and test AngularIO 5 and see how it is.
 
-
-# Instructions 
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.2.
+## Instructions 
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -28,7 +21,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
